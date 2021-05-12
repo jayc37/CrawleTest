@@ -1,3 +1,9 @@
+#sontran.code@gmail.com
+# Question 3 (high difficulty):
+# https://www.gnula.cc/ver-episode/big-sky-2020-1x9/
+
+# Requirements: Bypass Cloudflare's anti-bot page, get the key cookie of the page and keep it.
+
 import cfscrape
 import requests
 def Bypass_Cloudflare(url):
@@ -18,3 +24,7 @@ def Bypass_Cloudflare(url):
             for c in scraper.cookies
     ]
     return data
+
+url = "https://www.gnula.cc/ver-episode/big-sky-2020-1x9/"
+data = Bypass_Cloudflare(url)
+print(data)
