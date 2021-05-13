@@ -88,6 +88,7 @@ def Bypass_Cloudflare():
             print("Skipping. Connnection error : "+str(e))
 
 def get_proxies():
+    """ Sorry because not provided 'High Level Proxy' here. It not free!"""
     # url = 'http://nntime.com//'
     url = 'https://free-proxy-list.net/'
 
