@@ -4,7 +4,6 @@ import socket
 from collections import OrderedDict
 from requests import Session
 
-import requests
 from itertools import cycle
 from lxml.html import fromstring
 from time import sleep
@@ -98,13 +97,9 @@ def get_proxies():
     parser = fromstring(response.text)
     proxies = set()
     for i in parser.xpath('//tbody/tr'):
-        # if i.xpath('.//td[7][contains(text(),"yes")]'):
-            #Grabbing IP and corresponding PORT
-        try:
+        if i.xpath('.//td[7][contains(text(),"yes")]'):
             proxy = ":".join([i.xpath('.//td[1]/text()')[0], i.xpath('.//td[2]/text()')[0]])
             proxies.add(proxy)
-        except:
-            pass
     return proxies
 
 Bypass_Cloudflare()
