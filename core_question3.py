@@ -1,4 +1,3 @@
-
 import requests
 import socket
 from collections import OrderedDict
@@ -82,9 +81,8 @@ def Bypass_Cloudflare():
         r = requests.Session()
         r.headers = headers
         try:
-            sleep(5)
-            # proxies={"http": 'http://'+proxy, "https": 'https://'+proxy}
-            response = r.get(url,headers=headers,verify=False)
+            sleep(2)
+            response = r.get(url,headers=headers,verify=False,proxies={"http": 'http://'+proxy, "https": 'https://'+proxy})
             print(r.cookies.get_dict())
         except Exception as e:
             print("Skipping. Connnection error : "+str(e))
